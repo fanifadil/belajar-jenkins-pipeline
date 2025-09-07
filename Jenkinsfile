@@ -8,14 +8,14 @@ pipeline {
         stage("Build") {
             steps {
                 echo("Start build")
-                sh("./mvnm clean compile test-compile")
+                sh("./mvnw clean compile test-compile")
                 echo("Finish finish")
             }
         }
         stage("Test") {
             steps {
                 echo("test build")
-                sh("./mvnm test")
+                sh("./mvnw test")
                 echo("test finish")
             }
         }
