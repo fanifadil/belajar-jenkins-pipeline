@@ -7,14 +7,16 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo("build 1")
-                sleep(5)
-                echo("build 2")
+                echo("Start build")
+                sh("./mvnm clean compile test-compile")
+                echo("Finish finish")
             }
         }
         stage("Test") {
             steps {
-                echo("test 1")
+                echo("test build")
+                sh("./mvnm test")
+                echo("test finish")
             }
         }
         stage("Deploy") {
